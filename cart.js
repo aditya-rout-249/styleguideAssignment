@@ -9,6 +9,10 @@ const cart = localStorage.getItem("cart")
 
 // function to add item to cart and item details are fetched from server
 const addItem = (item = {}) => {
+  if (item === {}) {
+    return 
+  };
+
   const { cost, id } = item;
 
   //condition if item is already present
@@ -25,7 +29,11 @@ const addItem = (item = {}) => {
 };
 
 //fucntion to remove item from cart
-const removeItem = (item = {}) => {
+const removeItem = (item = {}) => {  
+  if (item === {}){
+    return
+  }     
+  
   const { cost, id } = item;
   if (cart.items[id].quantity > 1) {
     const quantity = cart.items[id].quantity;
